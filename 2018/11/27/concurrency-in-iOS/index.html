@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>iOS 中的并发性问题 - CyberHex</title>
+    <title>iOS 中的并发性问题 - AlmostKhan</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
@@ -15,7 +15,7 @@
 
 前言之前在开发过程中曾经遇到过挺多次并发的问题，比如在自己写 networking 代码的时候会遇到一些（对！我是自己手写 network,"> 
     <meta name="author" content="Penstein"> 
-    <link rel="alternative" href="atom.xml" title="CyberHex" type="application/atom+xml"> 
+    <link rel="alternative" href="atom.xml" title="AlmostKhan" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
@@ -68,14 +68,14 @@
             <div></div>
         </div>
     </div>
-    <span id="config-title" style="display:none">CyberHex</span>
+    <span id="config-title" style="display:none">AlmostKhan</span>
     <div id="loader"></div>
     <div id="single">
     <div class="scrollbar gradient-bg-rev"></div>
 <div id="top" style="display: block;">
     <div class="bar" style="width: 0;"></div>
     <div class="navigation animated fadeIn fast delay-1s">
-        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://cyberhex.me">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://almostkhan.me">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
         <h3 class="subtitle">iOS 中的并发性问题</h3>
         <div class="social">
@@ -191,7 +191,7 @@
 </ol>
 <h3 id="队列的创建"><a href="#队列的创建" class="headerlink" title="队列的创建"></a>队列的创建</h3><p>在实际应用中，我们碰到的有三种常用队列：主队列，全局队列和自创队列。</p>
 <p>首先我们先看自创队列：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Swift</span></span><br><span class="line"><span class="keyword">let</span> backgroundQueue <span class="operator">=</span> <span class="type">DispatchQueue</span>(label: <span class="string">&quot;com.cyberhex.concurrent.queue&quot;</span>, attributes: .concurrent)</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Swift</span></span><br><span class="line"><span class="keyword">let</span> backgroundQueue <span class="operator">=</span> <span class="type">DispatchQueue</span>(label: <span class="string">&quot;com.almostkhan.concurrent.queue&quot;</span>, attributes: .concurrent)</span><br></pre></td></tr></table></figure>
 
 <p>上边就是创建队列的过程，DispatchQueue 的构造函数需要好多个参数，但是除了 label 其他的都是可选参数（如下），一般来说创建的队列都是并行队列。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DispathQueue 的定义</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">convenience</span> <span class="keyword">init</span>(<span class="params">label</span>: <span class="type">String</span>, <span class="params">qos</span>: <span class="type">DispatchQoS</span> <span class="operator">=</span> <span class="keyword">default</span>, <span class="params">attributes</span>: <span class="type">DispatchQueue</span>.<span class="type">Attributes</span> <span class="operator">=</span> <span class="keyword">default</span>, <span class="params">autoreleaseFrequency</span>: <span class="type">DispatchQueue</span>.<span class="type">AutoreleaseFrequency</span> <span class="operator">=</span> <span class="keyword">default</span>, <span class="params">target</span>: <span class="type">DispatchQueue</span>? <span class="operator">=</span> <span class="keyword">default</span>)</span><br></pre></td></tr></table></figure>
@@ -301,7 +301,7 @@
 </body>
 <footer>
     <p class="copyright" id="copyright">
-        &copy; 2025
+        &copy; 2026
         <span class="gradient-text">
             Penstein
         </span>.

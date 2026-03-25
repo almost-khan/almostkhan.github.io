@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ARTS 打卡 01 - CyberHex</title>
+    <title>ARTS 打卡 01 - AlmostKhan</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
@@ -16,7 +16,7 @@
 AlgorithmN 皇后问题（LeetCode 51 困难）
 这个题目也算是 DFS 算法中经典的经典，所以这道题目的结构也是遵循递归的几大步骤（r,"> 
     <meta name="author" content="Penstein"> 
-    <link rel="alternative" href="atom.xml" title="CyberHex" type="application/atom+xml"> 
+    <link rel="alternative" href="atom.xml" title="AlmostKhan" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
@@ -69,14 +69,14 @@ AlgorithmN 皇后问题（LeetCode 51 困难）
             <div></div>
         </div>
     </div>
-    <span id="config-title" style="display:none">CyberHex</span>
+    <span id="config-title" style="display:none">AlmostKhan</span>
     <div id="loader"></div>
     <div id="single">
     <div class="scrollbar gradient-bg-rev"></div>
 <div id="top" style="display: block;">
     <div class="bar" style="width: 0;"></div>
     <div class="navigation animated fadeIn fast delay-1s">
-        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://cyberhex.me">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://almostkhan.me">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
         <h3 class="subtitle">ARTS 打卡 01</h3>
         <div class="social">
@@ -168,7 +168,7 @@ AlgorithmN 皇后问题（LeetCode 51 困难）
 <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>本来以为这周的 tips 可能要鸽了，但是在打卡前的最后几个小时发现了一个看起来很有意思的小技巧，让我这个强迫症眼前一亮。<br>在 MVVM 中因为每一个 ViewController 都会有一个 ViewModel，所以之前我在创建 ViewController 的时候有两种方法，一种是用 Initializer Injection，也就是把 ViewModel 作为 ViewController的 Init 方法的参数，另一种就是把 ViewModel 设为一个 Optional 的 internal 的变量，在初始化 ViewController 之后把 ViewModel 赋值进去。但感觉这两种方法都有一点不符合我的习惯，第一种需要加一个没用的 required 的 initializer，第二种需要在初始化之后赋值（有可能会忘）。今天发现一种使用工厂方法来创建 ViewController 的套路，如下：</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ViewController</span>: <span class="title class_ inherited__">UIViewController</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">let</span> viewModel: <span class="type">ViewModel</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">func</span> <span class="title function_">create</span>(<span class="params">withViewModel</span> <span class="params">viewModel</span>: <span class="type">ViewModel</span>) -&gt; <span class="type">ViewController</span> &#123;</span><br><span class="line">		<span class="keyword">let</span> vc <span class="operator">=</span> <span class="type">ViewController</span>()</span><br><span class="line">		vc.viewModel <span class="operator">=</span> viewModel</span><br><span class="line">		<span class="keyword">return</span> vc</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p><a href="https://cyberhex.me/2020/04/26/coodinator-pattern/">都是 Apple 惹的祸 - Coordinator Pattern 的前世今生</a></p>
+<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p><a href="https://almostkhan.me/2020/04/26/coodinator-pattern/">都是 Apple 惹的祸 - Coordinator Pattern 的前世今生</a></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -248,7 +248,7 @@ AlgorithmN 皇后问题（LeetCode 51 困难）
 </body>
 <footer>
     <p class="copyright" id="copyright">
-        &copy; 2025
+        &copy; 2026
         <span class="gradient-text">
             Penstein
         </span>.
