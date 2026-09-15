@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARTS 打卡 06 - AlmostKhan</title>
+  <meta name="description" content="本文主要是公司内部 ARTS 活动打卡记录
+
+
+AlgorithmK 个一组翻转链表（LeetCode 25，困难）
+这个题真的是就算知道怎么做也是要写错好几回，我这次的 AC 率是 6，感觉链表的题还是要多练才行。还有 Dummy Node 的技巧也很重要。
+Review这周看了这篇教程：Testing You...">
+  <meta name="author" content="Penstein">
+  <link rel="canonical" href="https://almostkhan.me/2020/07/20/arts-06/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ARTS 打卡 06">
+  <meta property="og:description" content="本文主要是公司内部 ARTS 活动打卡记录
+
+
+AlgorithmK 个一组翻转链表（LeetCode 25，困难）
+这个题真的是就算知道怎么做也是要写错好几回，我这次的 AC 率是 6，感觉链表的题还是要多练才行。还有 Dummy Node 的技巧也很重要。
+Review这周看了这篇教程：Testing You...">
+  <meta property="og:url" content="https://almostkhan.me/2020/07/20/arts-06/">
+  <meta property="og:site_name" content="AlmostKhan">
+  <meta property="og:image" content="https://almostkhan.me/img/welcome-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta property="article:published_time" content="2020-07-19T16:35:51.000Z">
+  <meta property="article:modified_time" content="2020-07-19T16:35:51.000Z">
+  
+  <link rel="alternate" href="/atom.xml" title="AlmostKhan" type="application/atom+xml">
+  <link rel="icon" href="/img/favicon.png?v=brand-restored">
+  
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<link rel="stylesheet" href="/css/obsidian.css">
+<link rel="stylesheet" href="/css/site.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+    <span id="config-title" style="display:none">AlmostKhan</span>
+    <div id="loader"></div>
+    <noscript><nav aria-label="站点导航"><a href="/">首页</a> · <a href="/archives/">归档</a> · <a href="/tags/">标签</a> · <a href="/about/">关于</a></nav></noscript>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <a href="/" aria-label="返回首页"><img id="home-icon" class="icon-home" src="/img/favicon.png?v=brand-restored" alt="" data-url="https://almostkhan.me"></a>
+        <h3 class="subtitle">ARTS 打卡 06</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image:
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.png') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/ARTS"><b>「
+                    </b>ARTS<b> 」</b></a>
+                
+                七月 20, 2020
+            </p>
+            <h1 class="post-title animated fadeInDown"><a href="/2020/07/20/arts-06/" title="ARTS 打卡 06" class="">ARTS 打卡 06</a>
+            </h1>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    1.9k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    2 分钟
+                </span>
+                
+                
+                
+            </p>
+            
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <p>本文主要是公司内部 ARTS 活动打卡记录</p>
+<span id="more"></span>
+
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>K 个一组翻转链表（LeetCode 25，困难）</p>
+<p>这个题真的是就算知道怎么做也是要写错好几回，我这次的 AC 率是 6，感觉链表的题还是要多练才行。还有 Dummy Node 的技巧也很重要。</p>
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>这周看了这篇教程：<a target="_blank" rel="noopener" href="https://www.raywenderlich.com/7408-testing-your-rxswift-code#toc-anchor-005">Testing Your RxSwift Code</a></p>
+<h3 id="RxTest-VS-RxBlocking"><a href="#RxTest-VS-RxBlocking" class="headerlink" title="RxTest VS. RxBlocking"></a>RxTest VS. RxBlocking</h3><p>两个在 Rx 的测试中都非常有用，RxBlocking 更加直观，RxTest 更加全面。</p>
+<p>RxTest 可以覆盖大部分测试，而且 TestScheduler 模拟的虚拟时间可以大大缩短测试时间，但是写起来比较长也比较麻烦</p>
+<p>相比 RxBlocking 写起来非常简单也直观，但使用场景比较局限，其中对我们来说比较致命的一点是 RxBlocking 对于无法停止的序列的测试能力很有限，并不能提供我们需要的能力。而我们直播中大部分序列都是无限序列，所以暂时不考虑 RxBlocking。</p>
+<p>还有一点就是，RxBlocking 无法测试时间相关的用例，比如我在 1s的时候收到一个信号，想测试输出是否在 1s的时候输出某个特定值，RxBlocking 只能测试出来收到了这个值，但是不能确定时间戳。RxBlocking 比较适合测试初始值，或者只有一个状态的序列。</p>
+<p>RxBlocking 也会 block 住当前线程，所以之前发生过的，测试走到 RxBlocking的语句之后，就会卡死并且无法继续进行测试也是这个引起的（我们使用了 BehaviorRelay 是无限序列）。</p>
+<p>所以之后的测试还是需要继续使用 RxTest，以上。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>这次没发现特别骚的套路，所以先鸽了</p>
+<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><h3 id="什么时候需要写单测"><a href="#什么时候需要写单测" class="headerlink" title="什么时候需要写单测"></a>什么时候需要写单测</h3><p>并不是所有的代码都需要你写单测来保证的，总结起来就是“三个不一个要”：</p>
+<ol>
+<li>不给自动生成的代码写 Unit Test（比如生成的 getter setter），我们要相信 Xcode（或者其他编辑器），出了问题是天灾，需要我们单独分情况处理，然后给我们自己处理的代码写单测。</li>
+<li>不给编译器能发现的问题写 Unit Test，这个不是你需要关心的。</li>
+<li>不给第三方库写 Unit Test，所谓疑人不用，用人不疑，你既然辛辛苦苦选择了一个靠谱的第三方库，就要相信他。如果出问题的话处理方式同第一点。</li>
+<li>要给自己写的无法用编译器发现问题的代码写 Unit Test，包括自己写的 Class，Method 等。</li>
+</ol>
+<p>总结一下，上边的原则看起来挺多，其实就是一句话：上帝的归上帝，凯撒的归凯撒，自己的锅自己背，别人的锅我不管。</p>
+
+            
+            <div class="post-nav">
+                <hr>
+                
+                    <div class="post-nav-item">上一篇:<a href="/2020/07/26/arts-07/" rel="prev"
+                        title="ARTS 打卡 07">ARTS 打卡 07
+                      </a></div>
+                
+                
+                    <div class="post-nav-item">下一篇:<a href="/2020/07/07/tdd-part-five/" rel="next"
+                        title="A song of TDD and BUG - 尾声">A song of TDD and BUG - 尾声</a></div>
+                
+            </div>
+            
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/profile.jpg?v=brand-restored" height="300" width="300" alt="作者头像" loading="lazy"></img>
+                    <p>Penstein</p>
+                    <span>Simple(r) Always Wins.</span>
+                    <dl>
+                        
+                            
+                                <dd><a href="https://github.com/almost-khan" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>文章</p></a></li>
+                    <li><a href="/categories">6 <p>分类</p></a></li>
+                    <li><a href="/tags">9 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithm"><span class="toc-number">1.</span> <span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Review"><span class="toc-number">2.</span> <span class="toc-text">Review</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RxTest-VS-RxBlocking"><span class="toc-number">2.1.</span> <span class="toc-text">RxTest VS. RxBlocking</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tips"><span class="toc-number">3.</span> <span class="toc-text">Tips</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Share"><span class="toc-number">4.</span> <span class="toc-text">Share</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E9%9C%80%E8%A6%81%E5%86%99%E5%8D%95%E6%B5%8B"><span class="toc-number">4.1.</span> <span class="toc-text">什么时候需要写单测</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2026
+        <span class="gradient-text">
+            Penstein
+        </span>.
+        Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.4" target="_blank" rel="noopener">v1.4.9.4</a></small>
+        
+        
+    </p>
+</footer>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script defer src="/js/plugin.js"></script>
+<script defer src="/js/search.js"></script>
+<script defer src="/js/obsidian.js"></script>
+
+
+
+
+
+</body>
+</html>

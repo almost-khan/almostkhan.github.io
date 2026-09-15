@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A song of TDD and BUG - 主歌 - AlmostKhan</title>
+  <meta name="description" content="TDD 与 BUG 的爱恨情仇（卷二），本系列链表头部请戳 A song of TDD and BUG - 前奏曲
+
+
+FBI Warning我知道你在想啥，但是你想多了，我只是想给你一个强烈但不失友善的警告（Friendly But Intense Warning）而已。在了解 TDD 之前你需要知道，TDD ...">
+  <meta name="author" content="Penstein">
+  <link rel="canonical" href="https://almostkhan.me/2020/07/07/tdd-part-two/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A song of TDD and BUG - 主歌">
+  <meta property="og:description" content="TDD 与 BUG 的爱恨情仇（卷二），本系列链表头部请戳 A song of TDD and BUG - 前奏曲
+
+
+FBI Warning我知道你在想啥，但是你想多了，我只是想给你一个强烈但不失友善的警告（Friendly But Intense Warning）而已。在了解 TDD 之前你需要知道，TDD ...">
+  <meta property="og:url" content="https://almostkhan.me/2020/07/07/tdd-part-two/">
+  <meta property="og:site_name" content="AlmostKhan">
+  <meta property="og:image" content="https://almostkhan.me/img/welcome-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta property="article:published_time" content="2020-07-06T16:27:20.000Z">
+  <meta property="article:modified_time" content="2020-07-06T16:27:20.000Z">
+  
+  <link rel="alternate" href="/atom.xml" title="AlmostKhan" type="application/atom+xml">
+  <link rel="icon" href="/img/favicon.png?v=brand-restored">
+  
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<link rel="stylesheet" href="/css/obsidian.css">
+<link rel="stylesheet" href="/css/site.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+    <span id="config-title" style="display:none">AlmostKhan</span>
+    <div id="loader"></div>
+    <noscript><nav aria-label="站点导航"><a href="/">首页</a> · <a href="/archives/">归档</a> · <a href="/tags/">标签</a> · <a href="/about/">关于</a></nav></noscript>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <a href="/" aria-label="返回首页"><img id="home-icon" class="icon-home" src="/img/favicon.png?v=brand-restored" alt="" data-url="https://almostkhan.me"></a>
+        <h3 class="subtitle">A song of TDD and BUG - 主歌</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image:
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.png') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/工作总结"><b>「
+                    </b>工作总结<b> 」</b></a>
+                
+                七月 07, 2020
+            </p>
+            <h1 class="post-title animated fadeInDown"><a href="/2020/07/07/tdd-part-two/" title="A song of TDD and BUG - 主歌" class="">A song of TDD and BUG - 主歌</a>
+            </h1>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    45k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    41 分钟
+                </span>
+                
+                
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/TDD/" rel="tag">TDD</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <p>TDD 与 BUG 的爱恨情仇（卷二），本系列链表头部请戳 <a href="https://almostkhan.me/2020/06/14/tdd-part-one/">A song of TDD and BUG - 前奏曲</a></p>
+<span id="more"></span>
+
+<h2 id="FBI-Warning"><a href="#FBI-Warning" class="headerlink" title="FBI Warning"></a>FBI Warning</h2><p>我知道你在想啥，但是你想多了，我只是想给你一个强烈但不失友善的警告（Friendly But Intense Warning）而已。在了解 TDD 之前你需要知道，TDD 只是一种开发模式，不是圣经也不是行为准则，我们需要辩证的去看待 TDD，可以参照 TDD 并且结合自己的实际情况选择最适合自己的开发模式，毕竟适合自己的才是最好的。这你可能会问了，刚你还说 TDD 又是最耀眼的新星，又是救世主的，现在咋又说人家坏话。我想说的是，你毕竟还是 Too Young，要我不进行一波商业吹嘘，你可能也不愿意往下看啊，流量称王的时代，我不得忽悠你多看几眼啊。</p>
+<h2 id="什么代码需要写单测"><a href="#什么代码需要写单测" class="headerlink" title="什么代码需要写单测"></a>什么代码需要写单测</h2><p>并不是所有的代码都需要你写单测来保证的，总结起来就是“三个不一个要”：</p>
+<ol>
+<li>不给自动生成的代码写 Unit Test（比如生成的 getter setter），我们要相信 Xcode（或者其他编辑器），出了问题是天灾，需要我们单独分情况处理，然后给我们自己处理的代码写单测。</li>
+<li>不给编译器能发现的问题写 Unit Test，这个不是你需要关心的。</li>
+<li>不给第三方库写 Unit Test，所谓疑人不用，用人不疑，你既然辛辛苦苦选择了一个靠谱的第三方库，就要相信他。如果出问题的话处理方式同第一点。</li>
+<li>要给自己写的无法用编译器发现问题的代码写 Unit Test，包括自己写的 Class，Method 等。</li>
+</ol>
+<p>总结一下，上边的原则看起来挺多，其实就是一句话：上帝的归上帝，凯撒的归凯撒，自己的锅自己背，别人的锅我不管。</p>
+<h2 id="如何做一只合格的单测"><a href="#如何做一只合格的单测" class="headerlink" title="如何做一只合格的单测"></a>如何做一只合格的单测</h2><p>如果单测界也需要面试，那单测的招聘广告一定是下面这样的：</p>
+<ol>
+<li>你必须是可失败的，禁止使用如 Assert True 为 True 这样的作弊手段来保证自己的正确性，一经发现，必将诉诸法律手段。</li>
+<li>你必须是可重复的，不能在多次的测试中给出不同的结果，否则你就会失去工作。</li>
+<li>你必须是有效率的，不能干活磨磨唧唧的，可别忘了，我们这每次测试都需要跑很多单测，如果你处理工作超过 100 ms 就是不合格的。</li>
+</ol>
+<p>突然有点心疼单测的工作，但是我们能怎么办呢，人生不如意十有八九，更何况单测呢。</p>
+<h2 id="单测的命名规则"><a href="#单测的命名规则" class="headerlink" title="单测的命名规则"></a>单测的命名规则</h2><p>这里有的小朋友就可能要问了，我写的单测我做主，我就要给他命名成 test1，test10086，testMyLove，你管我。这些小朋友一看就没有经历过社会的毒打，作为一个腿都被打断的过来人，我给你分享一点人生的经验。比如你刚进行了一次重构，突然发现有个名叫 testYouDidntGiveMeAMeaningfulNameAndNowYouSuckIt 的单测出了问题，你根本不知道他具体是代表了哪个地方出问题，你得需要在众单测中先找到这个单测，然后大概看一下测了什么并且心里一直在想给之前写单测的自己扇一大耳光，这会令你浪费很多宝贵的时间。在理解了命名的重要性后，下边我就分享一个比较通用的命名规则：</p>
+<ol>
+<li>对于每一个 class 有一个对应的 Unit Test 文件，命名规则为原文件名 + Tests，比如想给 ViewModel 写 Unit Test 就叫 ViewModelTests</li>
+<li>测试函数名规则：test + 要被测试的函数名&#x2F;变量名 +  _ + 状态 + _ + 所期望的结果，比如一个叫 state 的输出在初始化之后是否为 normal，函数名就应该是 testState_whenInit_isNormal</li>
+<li>什么是 sut：sut stands for  “System Under Test”，平时我们用 sut 来表示需要被测试的对象，比如在 ViewModelTests 中 sut 就是 ViewModel 的实体，即 sut &#x3D; ViewModel()</li>
+</ol>
+<h2 id="Given，When，Then"><a href="#Given，When，Then" class="headerlink" title="Given，When，Then"></a>Given，When，Then</h2><p>这三个是单元测试的三个基本步骤（如此 skr 的命名方式，相信前辈也是一名单压狂魔吧）：</p>
+<ol>
+<li>Given 是指初始状态，也就是 sut 的初始状态。</li>
+<li>When 是指一个发生在 sut 上的事件或者状态变化。</li>
+<li>Then 是指在状态变化后来测试 sut 的状态与期望的状态是否相同。</li>
+</ol>
+<h2 id="Gearing-Up"><a href="#Gearing-Up" class="headerlink" title="Gearing Up"></a>Gearing Up</h2><p>相信你已经摩拳擦掌，迫不及待的想开始了。但是少侠稍安勿躁，行走江湖没有一件趁手的装备怎么行。这里我就以 iOS 为例来探讨一下单测框架的选择。选择框架需要考虑几个方面的问题：</p>
+<ol>
+<li>学习成本：我把这个列在第一位，是因为时间就是金钱，谁也不愿意花费大量时间学习一个晦涩难懂的框架。</li>
+<li>易用性：这个就不用我多说了吧，一个好用的框架能让你事半功倍，反之，事半功半半半。</li>
+<li>可读性：这个也很重要，因为很多情况下单测只是用来测试代码的，也可以作为了解业务逻辑的一种方法。</li>
+<li>附加价值：这个就很笼统了，比如有的框架内置 BDD，有的和其他库 - 比如 Mock 的库（为什么要把 Mock 单独拿出来说，之后你就会明白）- 更加贴合，这些都可以成为框架的附加价值。</li>
+</ol>
+<p>接下来我就以 iOS 中的两个常用的框架做一下比较，下边有请本段的双主角 XCTest 和 Quick &amp; Nimble。先交代一下故事的背景，XCTest 是苹果自带的单测框架，而 Quick &amp; Nimble 是基于 XCTest 发展出来的一个框架，具有非常独特的语法和使用方式，但是底层的 Assertion 等和 XCTest 非常相似。</p>
+<p>我们先直观的看一下两个框架的测试代码都长什么样：</p>
+<p>首先是苹果自带的 XCTest：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">WeekDayViewModelTests</span>: <span class="title class_ inherited__">XCTestCase</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> sut: <span class="type">WeekDayViewModel</span>!</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">func</span> <span class="title function_">setUp</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.setUp()</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Load Stub</span></span><br><span class="line">        <span class="keyword">let</span> data <span class="operator">=</span> loadStub(name: <span class="string">&quot;darksky&quot;</span>, extension: <span class="string">&quot;json&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Initialize JSON Decoder</span></span><br><span class="line">        <span class="keyword">let</span> decoder <span class="operator">=</span> <span class="type">JSONDecoder</span>()</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Configure JSON Decoder</span></span><br><span class="line">        decoder.dateDecodingStrategy <span class="operator">=</span> .secondsSince1970</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Initialize Dark Sky Response</span></span><br><span class="line">        <span class="keyword">let</span> darkSkyResponse <span class="operator">=</span> <span class="keyword">try!</span> decoder.decode(<span class="type">DarkSkyResponse</span>.<span class="keyword">self</span>, from: data)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Initialize View Model</span></span><br><span class="line">        sut <span class="operator">=</span> <span class="type">WeekDayViewModel</span>(weatherData: darkSkyResponse.forecast[<span class="number">5</span>])</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">func</span> <span class="title function_">tearDown</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.tearDown()</span><br><span class="line">        sut <span class="operator">=</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">func</span> <span class="title function_">testDay_whenGetData_isExpected</span>() &#123;</span><br><span class="line">        <span class="type">XCTAssertEqual</span>(sut.day, <span class="string">&quot;Sunday&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">func</span> <span class="title function_">testDate_whenGetData_isExpected</span>() &#123;</span><br><span class="line">        <span class="type">XCTAssertEqual</span>(sut.date, <span class="string">&quot;September 2&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">func</span> <span class="title function_">testTemperature_whenGetData_isExpected</span>() &#123;</span><br><span class="line">        <span class="type">XCTAssertEqual</span>(sut.temperature, <span class="string">&quot;12.2 °C - 20.1 °C&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">func</span> <span class="title function_">testWindSpeed_whenGetData_isExpected</span>() &#123;</span><br><span class="line">        <span class="type">XCTAssertEqual</span>(sut.windSpeed, <span class="string">&quot;5 MPH&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来是倔强的 Quick &amp; Nimble：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">WeekDayViewModelTests</span>: <span class="title class_ inherited__">QuickSpec</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">func</span> <span class="title function_">spec</span>() &#123;</span><br><span class="line">        describe(<span class="string">&quot;a WeekDayViewModel&quot;</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> sut: <span class="type">WeekDayViewModel</span>!</span><br><span class="line">            </span><br><span class="line">            beforeEach &#123;</span><br><span class="line">                <span class="keyword">let</span> data <span class="operator">=</span> <span class="keyword">self</span>.loadStub(name: <span class="string">&quot;darksky&quot;</span>, extension: <span class="string">&quot;json&quot;</span>)</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Initialize JSON Decoder</span></span><br><span class="line">                <span class="keyword">let</span> decoder <span class="operator">=</span> <span class="type">JSONDecoder</span>()</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Configure JSON Decoder</span></span><br><span class="line">                decoder.dateDecodingStrategy <span class="operator">=</span> .secondsSince1970</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Initialize Dark Sky Response</span></span><br><span class="line">                <span class="keyword">let</span> darkSkyResponse <span class="operator">=</span> <span class="keyword">try!</span> decoder.decode(<span class="type">DarkSkyResponse</span>.<span class="keyword">self</span>, from: data)</span><br><span class="line">                </span><br><span class="line">                sut <span class="operator">=</span> <span class="type">WeekDayViewModel</span>(weatherData: darkSkyResponse.forecast[<span class="number">5</span>])</span><br><span class="line">            &#125;</span><br><span class="line">           </span><br><span class="line">            afterEach &#123;</span><br><span class="line">                sut <span class="operator">=</span> <span class="literal">nil</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            describe(<span class="string">&quot;its day&quot;</span>) &#123;</span><br><span class="line">                context(<span class="string">&quot;when got weather data&quot;</span>) &#123;</span><br><span class="line">                    it(<span class="string">&quot;is Sunday&quot;</span>) &#123;</span><br><span class="line">                        expect(sut.day).to(equal(<span class="string">&quot;Sunday&quot;</span>))</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            describe(<span class="string">&quot;its date&quot;</span>) &#123;</span><br><span class="line">                context(<span class="string">&quot;when got weather data&quot;</span>) &#123;</span><br><span class="line">                    it(<span class="string">&quot;it is September 2&quot;</span>) &#123;</span><br><span class="line">                        expect(sut.date).to(equal(<span class="string">&quot;September 2&quot;</span>))</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            describe(<span class="string">&quot;its temperature&quot;</span>) &#123;</span><br><span class="line">                context(<span class="string">&quot;when got weather data&quot;</span>) &#123;</span><br><span class="line">                    it(<span class="string">&quot;is 12.2 °C - 20.1 °C&quot;</span>) &#123;</span><br><span class="line">                        expect(sut.temperature).to(equal(<span class="string">&quot;12.2 °C - 20.1 °C&quot;</span>))</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            describe(<span class="string">&quot;its windSpeed&quot;</span>) &#123;</span><br><span class="line">                context(<span class="string">&quot;when got weather data&quot;</span>) &#123;</span><br><span class="line">                    it(<span class="string">&quot;is 5 MPH&quot;</span>) &#123;</span><br><span class="line">                        expect(sut.windSpeed).to(equal(<span class="string">&quot;5 MPH&quot;</span>))</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>上边分别是两个框架对 WeekDayViewModel 的单元测试，你可以明显感觉到两个库的风格。说不定你可能就只是在库群中对其中某个多看了一眼，然后再也忘不掉它的优雅。但是选一个框架跟结婚一样，不止需要看对眼，还需要考虑很多现实的问题，要不然破裂的时候，就不只是“不和它一起维护代码”了那么简单了，还需要考虑重构，移除依赖，选择一个新的库一起维护代码，都说戏如人生，写代码也何尝不是如此呢。接下来，我就给你用上边的几个原则理性的分析一波，但是不管我分析的结果是什么，决定权都在你手上。可别忘了：人是感性的生物，如果是真爱，去他喵的理性分析。</p>
+<ol>
+<li>Round 1：学习成本。XCTest 作为苹果的亲儿子，不论文档还是教程都比 Quick &amp; Nimble 这个“孤儿”要多很多，再加上 Quick &amp; Nimble 的使用方式比较特别，需要一点适应的时间，所以第一局 XCTest 胜。</li>
+<li>Round 2：易用性。其实如果花时间学习了其中任意一种框架的话，用起来的难易程度都差不多（当然这么说的比较主观，但是感觉应该不是有特别大的出入）。这一局算平局。</li>
+<li>Round 3：可读性。XCTest 中每一个测试都是独立的，如果对于同一个属性有不同的测试，我们需要人工的把它们归在一起，如果稍有不慎，就很容易混乱难找（单测一般都挺长的，尤其是加了Mock 以后）。但是 Quick &amp; Nimble 我们可以天然的把相同属性的测试都归在同一个 describe 下边。所以这一局算 Quick &amp; Nimble 胜。</li>
+<li>Round 4：附加价值。之前经过一番对比，两边各有胜负，最后又回到了起点，所以这一局算是胜负手。我主要想从对 BDD 的支持的方面来说，用 XCTest 你当然也可以结合 BDD 的思路来写单测，但是这个需要你人工的去维护。这时候 Quick &amp; Nimble 可就突然兴奋起来了，它对于 BDD 可是有天然的亲和力的。BDD 中的核心思想 GWT（也就是之前说过的 Given&#x2F;When&#x2F;Then）等价于 Quick &amp; Nimble 中的 descirbe，context，和 it（这几个在后边都会说到）。所以最终的 Winner 属于虽然是“孤儿”但仍能逆风 Carry 的 Quick &amp; Nimble。</li>
+</ol>
+<p>最后我还是想重申一下，上边的结论带有很大的主观性，对于不同的人来说结果肯定是有所出入的。但我觉得选择的过程还是可以被借鉴的，如果你有选择困难症的话，甚至可以参考 SWOT 分析法来选择。</p>
+<h2 id="真正的开始"><a href="#真正的开始" class="headerlink" title="真正的开始"></a>真正的开始</h2><p><a target="_blank" rel="noopener" href="https://github.com/quintessencegpy/Rainstorm">Rainstorm</a> 是一个非常简单直观但是又能 cover 我想说的大部分内容的项目，他是一个单页面的 App，页面上半部分是实时的天气，下边是接下来几天的天气预报，在这里我就不截图了，感兴趣的可以按照 ReadMe 里的一步一步跑一下项目， 如果你是懒人党，就凭空脑补一下 iOS 自带天气 App就行。什么，你不是 iOS 用户？那你就随手百度一下图片。什么，不会百度？不好意思，杠精出门右转，ETC 在左手边。</p>
+<p>关于如何创建项目和加入 Unit Test 我就不在这里赘述了，但是我需要提的一点是关于 Podfile。如果你是第一次在 Unit Test 加入 Pod 的话需要注意一下，因为在主项目中你并不会用到 Unit Test 的 Pod，但是在 Unit Test 中你大概率会用到主项目的 Pod，所以需要做一下下边的骚操作：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">target <span class="string">&#x27;Rainstorm&#x27;</span> <span class="keyword">do</span></span><br><span class="line">  <span class="comment"># Comment the next line if you don&#x27;t want to use dynamic frameworks</span></span><br><span class="line">  use_frameworks!</span><br><span class="line">  pod <span class="string">&#x27;SnapKit&#x27;</span></span><br><span class="line">  <span class="comment"># Pods for Rainstorm</span></span><br><span class="line">  target <span class="string">&#x27;RainstormTests&#x27;</span> <span class="keyword">do</span></span><br><span class="line">    inherit! <span class="symbol">:search_paths</span></span><br><span class="line">    pod <span class="string">&#x27;Quick&#x27;</span></span><br><span class="line">    pod <span class="string">&#x27;Nimble&#x27;</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>好了，废话说的够多了，我们开始写第一个单测。</p>
+<h2 id="初识-Quick-Nimble"><a href="#初识-Quick-Nimble" class="headerlink" title="初识 Quick &amp; Nimble"></a>初识 Quick &amp; Nimble</h2><p>不知道你有没有注意到，之前在对比 XCTest 和 Quick &amp; Nimble 的示例代码中我用到了很多的 “！”符号，这个是 Swift 中的强解包，说到这里很多了解 Optional 的同学就要嘲讽我了，但我要给自己辩护一下，我这里是故意用强解包的，因为：首先，在单测中不需要进行错误处理；其次，如果在这里发生了 Crash，说明我犯了一个又蠢又挫的错误，需要及时解决。</p>
+<p>接下来简单的说一下 Quick &amp; Nimble 的使用，我们先来看一下 Quick 官方文档中给的示例：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TableOfContentsSpec</span>: <span class="title class_ inherited__">QuickSpec</span> &#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="keyword">func</span> <span class="title function_">spec</span>() &#123;</span><br><span class="line">    describe(<span class="string">&quot;the &#x27;Documentation&#x27; directory&quot;</span>) &#123;</span><br><span class="line">      it(<span class="string">&quot;has everything you need to get started&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> sections <span class="operator">=</span> <span class="type">Directory</span>(<span class="string">&quot;Documentation&quot;</span>).sections</span><br><span class="line">        expect(sections).to(contain(<span class="string">&quot;Organized Tests with Quick Examples and Example Groups&quot;</span>))</span><br><span class="line">        expect(sections).to(contain(<span class="string">&quot;Installing Quick&quot;</span>))</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      context(<span class="string">&quot;if it doesn&#x27;t have what you&#x27;re looking for&quot;</span>) &#123;</span><br><span class="line">        it(<span class="string">&quot;needs to be updated&quot;</span>) &#123;</span><br><span class="line">          <span class="keyword">let</span> you <span class="operator">=</span> <span class="type">You</span>(awesome: <span class="literal">true</span>)</span><br><span class="line">          expect&#123;you.submittedAnIssue&#125;.toEventually(beTruthy())</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>就像之前说的，Quick &amp; Nimble，有三个层面 descirbe，context，和 it 分别对应 GWT（Given&#x2F;When&#x2F;Then）。套在上边的示例中就是：</p>
+<ol>
+<li>Given “the ‘Documentation’ directory”</li>
+<li>When “it doesn’t have what you’re looking for”</li>
+<li>Then “it needs to be updated”</li>
+</ol>
+<p>除此之外，常用的还有 beforeEach 和 afterEach，这两个名字就很能说明问题， 这两个 block 会在每个单测执行之前和之后执行，跟 XCTest 中的 setUp 和 tearDown 比较类似。博客的主要任务不是说 Quick &amp; Nimble，所以我就偷懒把学习资料放在这，需要的可以放到收藏夹里去吃灰：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.raywenderlich.com/135-behavior-driven-testing-tutorial-for-ios-with-quick-nimble#toc-anchor-010">Behavior-Driven Testing Tutorial for iOS with Quick &amp; Nimble</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Quick/Quick/tree/master/Documentation">Quick Documentation</a></li>
+</ol>
+<h2 id="做单测永远滴神"><a href="#做单测永远滴神" class="headerlink" title="做单测永远滴神"></a>做单测永远滴神</h2><p>在单测中，你要有猛虎归山，蛟龙如海，王者混入青铜局的气势，要有那种掌控雷电，呼风唤雨的感觉才对。为什么要这么说呢，你需要对单测的输入，流程，输出有绝对的控制权。但是这个神不是你想做，想做就能做的，你需要两个非常忠实的奴仆 - 抽象层和 Mock。</p>
+<h3 id="光能使者抽象层"><a href="#光能使者抽象层" class="headerlink" title="光能使者抽象层"></a>光能使者抽象层</h3><blockquote>
+<p>单测的一个“副作用”就是揭开你代码的最后一块遮羞布 - 很多问题比如逻辑太分散，耦合度太高等问题都会会暴露无疑。因为这一次面对这些问题的人不再是别人，而是你自己。</p>
+</blockquote>
+<p>人们都说单测是检验代码质量的重要标准，有这种说法的很大原因都是抽象层的功劳，所以它也不愧光能使者，因为有了它你也就有了一把如意神剑（能看懂这个的都是老中二了）。那你肯定想说，吹了半天，总得说出点名堂吧。还记得那句经典名言吗？</p>
+<blockquote>
+<p>计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决。</p>
+</blockquote>
+<p>这个中间层放在这里指的就是抽象层。</p>
+<p>拿 Rainstorm 来举例，因为我们是需要从网络拿到天气数据，然后才能展示。这时候你可能就会犯嘀咕，这种单测该怎么写？之前不是说了单测需要保证可重复性，我每次从网络拿到的数据又不可靠，怎么保证可重复性？如果你有这些疑问，说明你已经上道了，不愧是你小机灵鬼。其实这个问题答案就是这部分的核心思想，你要做单测永远滴神。既然从网络那边拿到的数据不可靠，我们就自己模拟，这也是马上要说的 Mock。但是模拟一次网络请求也太麻烦了，有没有什么更好的方法？这就可以回归主题 - 抽象层了。如果我们在 ViewModel（我只是以 MVVM 举例，可以是任何 class） 和 Networking 之间加一层抽象这个问题就迎刃而解。在 Rainstorm 中这个抽象层叫 NetworkService，它只是提供接口，所以不管数据是从网络来，还是单测中的 Stub，对于 ViewModel 来说都是透明的。这样一来，不仅解决了单测的问题，你的代码复用性也更高了。比如之后你想换网络层的库，只要接口不变，ViewModel 的代码就不用改。抽象层把路铺好了，接下来怎么操作就要看 Mock 的了。</p>
+<h3 id="堕落天使-Mock"><a href="#堕落天使-Mock" class="headerlink" title="堕落天使 Mock"></a>堕落天使 Mock</h3><p>其实关于 Mock 还有一个更专业的名字 - Test Double，直译过来就是测试专用替身（有人翻译成置换测试，但是明显我翻译的更接地气哈哈哈）。而且 Mock 只是 Test Double 其中的一种。Test Double 包含 Fake，Mock，Stub。他们之间都有一些区别。由于关系过于错综复杂如同八卦，所以感兴趣的可以去看看这篇博客 <a target="_blank" rel="noopener" href="https://blog.pragmatists.com/test-doubles-fakes-mocks-and-stubs-1a7491dfa3da">Test Doubles — Fakes, Mocks and Stubs.</a>。在之后的博客中我就避开这些如同文字游戏一般的概念，直接简单认为 Mock 就是我们模拟生产环境的对象，Stub 是模拟生产环境的数据（比如从网络拿到的数据或者数据库里的数据）。</p>
+<p>就像动漫钢之炼金术师里烧瓶中的小人一样，有时候最危险的人物或者说最终的 Boss 可能就隐藏在你身边，甚至可能是你最忠实的奴仆。在单测中，需要我们随时注意不被反咬一口的就是 Mock。这么说的原因是因为如果稍微不注意，Mock 就有可能变的像裹脚布一样，又臭又长。虽然在 Rainstrom 中没有出现这个问题，但是在一些复杂的项目中，有时候 Mock 一个对象可能需要先创建很多其他的“假”对象。但是有很多好用的 Mock 库可以用，一个比较出名的就是 <a target="_blank" rel="noopener" href="https://github.com/Brightify/Cuckoo">Cuckoo</a> ，有兴趣可以去了解一下。</p>
+<p>在 Rainstrom 中我们为了测试专门创建了两个 Mock Class - MockLocationService 和 MockNetworkService。它们分别是遵循 LocationService 和 NetworkService 接口的。由于他们的存在，单测中的 Mock 变得轻松了很多。</p>
+<h2 id="Networking-代码的单测"><a href="#Networking-代码的单测" class="headerlink" title="Networking 代码的单测"></a>Networking 代码的单测</h2><p>上一部分有提到 Networking 的测试，现在我们就来仔细说一下 Networking 代码的测试。接下来我就用最简单的方法来尝试给 RootViewModel 写一个单测。思路很简单，就是写一个假的 didFetchWeatherData，然后在回调中做 Assert 就可以了。下边是构想中的代码：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">RootViewModelTests</span>: <span class="title class_ inherited__">QuickSpec</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">func</span> <span class="title function_">spec</span>() &#123;</span><br><span class="line">        describe(<span class="string">&quot;a RootViewModel&quot;</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> sut: <span class="type">RootViewModel</span>!</span><br><span class="line">            <span class="keyword">var</span> networkService: <span class="type">MockNetworkService</span>!</span><br><span class="line">            <span class="keyword">var</span> locationService: <span class="type">MockLocationService</span>!</span><br><span class="line">            </span><br><span class="line">            beforeEach &#123;</span><br><span class="line">                <span class="comment">// Initialize Mock Network Service</span></span><br><span class="line">                networkService <span class="operator">=</span> <span class="type">MockNetworkService</span>()</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Configure Mock Network Service</span></span><br><span class="line">                networkService.data <span class="operator">=</span> <span class="keyword">self</span>.loadStub(name: <span class="string">&quot;darksky&quot;</span>, extension: <span class="string">&quot;json&quot;</span>)</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Initialize Mock Location Service</span></span><br><span class="line">                locationService <span class="operator">=</span> <span class="type">MockLocationService</span>()</span><br><span class="line"></span><br><span class="line">                <span class="comment">// Initialize Root View Model</span></span><br><span class="line">                sut <span class="operator">=</span> <span class="type">RootViewModel</span>(networkService: networkService, locationService: locationService)</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            afterEach &#123;</span><br><span class="line">                sut <span class="operator">=</span> <span class="literal">nil</span></span><br><span class="line">                networkService <span class="operator">=</span> <span class="literal">nil</span></span><br><span class="line">                locationService <span class="operator">=</span> <span class="literal">nil</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            describe(<span class="string">&quot;refreshing&quot;</span>) &#123;</span><br><span class="line">                context(<span class="string">&quot;when get weatherData&quot;</span>) &#123;</span><br><span class="line">                    it(<span class="string">&quot;get expected output&quot;</span>) &#123;</span><br><span class="line">                        sut.didFetchWeatherData <span class="operator">=</span> &#123; (result) <span class="keyword">in</span></span><br><span class="line">                            <span class="keyword">if</span> <span class="keyword">case</span> .success(<span class="keyword">let</span> weatherData) <span class="operator">=</span> result &#123;</span><br><span class="line">                                <span class="built_in">print</span>(weatherData)</span><br><span class="line">                                expect(weatherData.latitude).to(equal(<span class="number">37.8267</span>))</span><br><span class="line">                                expect(weatherData.longitude).to(equal(<span class="operator">-</span><span class="number">122.4233</span>))</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        </span><br><span class="line">                        sut.refresh()</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相信你如果跟着博客一直看，上边的代码应该比较好理解，然后如果跑一下单测会发现我们非常幸运，Test Succeeded 让我们感觉很有成就感。但是随手翻了一下 Console，你会发现事情并不简单。我在上边的代码中藏了一个小小的坑 - print(weatherData)。可我们在 Console 中并没有看到打印，这说明问题很严重，虽然我们测试成功了，然而其实代码根本就没有走到回调中，这是为什么呢？</p>
+<h2 id="异步测试方法"><a href="#异步测试方法" class="headerlink" title="异步测试方法"></a>异步测试方法</h2><p>看到这个标题你应该就大概了解原因了。没错，Xcode 中的 Unit Test 是一个同步的过程，所以我们异步的代码并没有执行。Quick  &amp; Nimble 中有两种 方法可以进行异步测试的方法  waitUntil 和 toEventually。这两个都可以进行异步的测试，具体的用法可以看这个博客 <a target="_blank" rel="noopener" href="https://www.mokacoding.com/blog/waituntil-vs-toeventually/">Nimble: when to use waitUntil or toEventually</a>，在这我就选择 waitUntil。接下来我们就对上边的单测用 waitUntil 进行改写：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    describe(<span class="string">&quot;refreshing&quot;</span>) &#123;</span><br><span class="line">        context(<span class="string">&quot;when get weatherData&quot;</span>) &#123;</span><br><span class="line">            it(<span class="string">&quot;get expected output&quot;</span>) &#123; </span><br><span class="line">                waitUntil &#123; (done) <span class="keyword">in</span></span><br><span class="line">                    sut.didFetchWeatherData <span class="operator">=</span> &#123; (result) <span class="keyword">in</span></span><br><span class="line">                        <span class="keyword">if</span> <span class="keyword">case</span> .success(<span class="keyword">let</span> weatherData) <span class="operator">=</span> result &#123;</span><br><span class="line">                            expect(weatherData.latitude).to(equal(<span class="number">37.8267</span>))</span><br><span class="line">                            expect(weatherData.longitude).to(equal(<span class="operator">-</span><span class="number">122.4233</span>))</span><br><span class="line">                            <span class="built_in">print</span>(weatherData)</span><br><span class="line">                            done()</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                    sut.refresh()</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这次我们就可以看到，不仅单测成功了，Console 中也打印出来了我们期待已久的 weatherData，是不是非常简单。</p>
+<h2 id="Happy-Path-vs-Unhappy-Path"><a href="#Happy-Path-vs-Unhappy-Path" class="headerlink" title="Happy Path vs. Unhappy Path"></a>Happy Path vs. Unhappy Path</h2><p>人生不如意十有八九，代码世界里虽然没有八九那么高，但是一些错误也是没有办法避免的。一些问题比如用户没有网络，无法 GPS 定位等问题都是可预期和可接受的。但不同的是，在代码中我们可以“开天眼”，提前为可能发生的问题部署，等到了发生的时候都可以优雅的处理这些问题。那这些所谓的 “Unhappy Path”是否需要单测呢？答案是何止是需要，那是相当需要。因为这些 Corner Case 的处理体现出了一个产品的下限，下限越高，越不容易翻车。</p>
+<p>下边我就以无法获得用户位置为例写一下 Unhappy Path 的测试。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">context(<span class="string">&quot;when failed to fetch location&quot;</span>) &#123;</span><br><span class="line">    it(<span class="string">&quot;get notAuthorizedToRequestLocation error&quot;</span>) &#123;</span><br><span class="line">        locationService.location <span class="operator">=</span> <span class="literal">nil</span></span><br><span class="line">        </span><br><span class="line">        waitUntil &#123; (done) <span class="keyword">in</span></span><br><span class="line">            sut.didFetchWeatherData <span class="operator">=</span> &#123; (result) <span class="keyword">in</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">case</span> .failure(<span class="keyword">let</span> error) <span class="operator">=</span> result &#123;</span><br><span class="line">                    expect(error).to(equal(<span class="type">RootViewModel</span>.<span class="type">WeatherDataError</span>.notAuthorizedToRequestLocation))</span><br><span class="line">                    done()</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            sut.refresh()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上边的测试中，我们把 locationService（类型是 MockLocationService）中的 location 设为空来模拟无法获取到用户位置。使用上边说到的异步测试的方法就可以测试我们是否能收到 notAuthorizedToRequestLocation 的错误。</p>
+<h2 id="Rx，你个磨人的小妖精"><a href="#Rx，你个磨人的小妖精" class="headerlink" title="Rx，你个磨人的小妖精"></a>Rx，你个磨人的小妖精</h2><p>使用过 Rx 的小朋友们一定会有一个这样的感受：开发一时爽，Debug 火葬场。因为虽然使用 Rx 的时候虽然感觉数据流很清晰，但是真的出问题的时候 Debug 真的是要了老命，因为崩溃的堆栈真会让你看的怀疑人生。所以这种时候写单测就非常重要了，因为趁着你在开发的时候对业务逻辑比较了解的时候把问题解决，比之后出问题了再重新看代码要省好多时间和头发。</p>
+<p>我也曾经有过用 waitUtil + subscribe 的方式进行过单测，但是效率真的是非常的低，尤其是 Time-Based Operator。想象你起了一个 3 秒间隔的 Timer。你在单测中就真的要等 3 秒来测试。听起来好像不多，但是你想如果有 100 这样的单测，你就需要等 300 秒！真的还不如把代码跑来来自己瞄一眼对不对呢。这也是之前在“如何做一只合格的单测”中提到的 100ms 阈值的原因。</p>
+<p>由于 Rx 的特殊的使用方式和开发模式，我们需要一个新的框架来进行对 Rx 的单元测试，在 RxSwift 中就是 RxTest 和 RxBlocking。</p>
+<h3 id="RxTest"><a href="#RxTest" class="headerlink" title="RxTest"></a>RxTest</h3><p>听这个名字就可以感觉到这个是 Rx 比较正统的测试方式了，毕竟都叫 RxTest。那它能怎么改变我们的测试方式呢？这就不得不说最大的功臣 TestScheduler。Scheduler 的作用跟 iOS 中线程有一点相似，但又不完全一样，我们平时用到比较多的就是 MainScheduler （RxSwift 中）。有兴趣的可以上百度谷歌一下，有很多的资料解释，我就不在这里多说了。那 TestScheduler 是什么呢，它其实就相当于生产代码中 Scheduler 的替身。但不同的是它在测试环境中使用的是虚拟时间，所以对于测试相当友好，就算我们用了一些 Time-Based Operator 我们也不用在测试中真的等那么长时间。下边我就假设 Rainstorm 中 RootViewModel 有一个输出叫做 isRefreshing，他是一个 PublishSubject，测试它的代码就如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">&quot;isRefreshing&quot;</span>) &#123;</span><br><span class="line">    context(<span class="string">&quot;when failed to fetch location&quot;</span>) &#123;</span><br><span class="line">        it(<span class="string">&quot;get expected output&quot;</span>) &#123; </span><br><span class="line">		<span class="keyword">let</span> isRefreshing <span class="operator">=</span> scheduler.createObserver(<span class="type">Bool</span>.<span class="keyword">self</span>)</span><br><span class="line">		sut.isPlaying</span><br><span class="line">			.drive(isPlaying)</span><br><span class="line">			.disposed(by: disposeBag)</span><br><span class="line"></span><br><span class="line">		scheduler.createColdObservable([.next(<span class="number">10</span>, ()), .next(<span class="number">20</span>, ()),  .next(<span class="number">30</span>, ())])</span><br><span class="line">       			   .bind(to: sut.applicationEnteredForeground)</span><br><span class="line">       			   .disposed(by: disposeBag)</span><br><span class="line"></span><br><span class="line">		scheduler.start()</span><br><span class="line"></span><br><span class="line">		expect(isRefreshing.events).to(equal([</span><br><span class="line">	    		.next(<span class="number">10</span>, <span class="literal">true</span>),</span><br><span class="line">	    		.next(<span class="number">20</span>, <span class="literal">true</span>),</span><br><span class="line">	    		.next(<span class="number">30</span>, <span class="literal">true</span>)		</span><br><span class="line">		]))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从上边的测试我们可以发现，我们甚至可以输入一个序列来看输出是什么，这会让我们的测试非常灵活，唯一的缺点就是太长了。</p>
+<h3 id="RxBlocking"><a href="#RxBlocking" class="headerlink" title="RxBlocking"></a>RxBlocking</h3><p>至于 RxBlocking，就有点像把 Rx 这个异步的过程变成同步以方便我们测试，我们也用代码来演示，假设 WeekViewModel 中的 temperature 输出也是一个 PublishSubject，那我们就可以用下边的方法来测试：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">&quot;its temperature&quot;</span>) &#123;</span><br><span class="line">    context(<span class="string">&quot;when got weather data&quot;</span>) &#123;</span><br><span class="line">        it(<span class="string">&quot;is 12.2 °C - 20.1 °C&quot;</span>) &#123;</span><br><span class="line">            expect(<span class="keyword">try!</span> sut.temperature.toBlocking().first()).to(equal(<span class="string">&quot;12.2 °C - 20.1 °C&quot;</span>))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>你可以回到上边 WeekViewModel 的测试部分（在 Gearing Up 部分)对比一下，基本上差不多，真的是谁用谁知道。但是任何事情都是有代价的，对于 RxBlocking 来说就是他的局限性：</p>
+<ol>
+<li>RxBlocking 对于无法停止的序列的测试能力很有限，如 BehaviorRelay 这种天生就无法停止的序列就无法用 RxBlocking。</li>
+<li>RxBlocking 会阻塞当前的线程，这个有可能会引起卡死的现象，从而无法进行接下来的单测。</li>
+<li>RxBlocking 无法像 RxTest 对特定时间点的事件进行测试，比如上边 RxTest 的测试中，我们可以很明确的知道在 10、20、30 秒的时候收到了 applicationEnteredForeground，并且我们的输出也是在 10、20、30 秒发出的，但是 RxBlocking 就没有这个能力。</li>
+<li>在这部分刚开始就说了 RxBlocking 是把异步过程强行变成一个同步的过程，所以一些必须要异步触发的 case （比如用一个序列触发另一个序列的这种情况）我们就没法用 RxBlocking。&#96;</li>
+</ol>
+<h3 id="如何做选择"><a href="#如何做选择" class="headerlink" title="如何做选择"></a>如何做选择</h3><blockquote>
+<p>只有小孩子才做选择，大人全都要。</p>
+</blockquote>
+<p>这是如今被用滥的一句梗。但你猜怎么着，用在这还真用对了。</p>
+<p>RxTest 更加全面，可以覆盖大部分测试，而且 TestScheduler 模拟的虚拟时间可以大大缩短测试时间，但是写起来比较长也比较麻烦。相比 RxBlocking 写起来非常简单也直观，但使用场景比较局限。我们何不取长补短，在可以使用 RxBlocking 的时候使用 RxBlocking，而在更复杂的使用场景，尤其是那些需要 timestamp 精准对应的场景使用 RxTest。这样我们就充分利用了两种方式的长处，何乐而不为呢。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这一篇主要讲了关于单测的东西，单测作为 TDD 的根基，是学习 TDD 路上必须要掌握的生存技能。不过对于许多人来说只掌握单测其实就足够了，因为 TDD 只是一种开发模式，而单测才是根本。你也可以在掌握了单测后根据自己或团队的 workflow 来定制属于自己的开发模式。如果你对 TDD 比较好奇的话，也可以继续往下看。</p>
+<p><a href="https://almostkhan.me/2020/07/07/tdd-part-three/">To Be Continued</a>（此处应有专属音乐）</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>相关链接：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Quick/Quick/tree/master/Documentation">Quick Documentation</a><br><a target="_blank" rel="noopener" href="https://www.raywenderlich.com/135-behavior-driven-testing-tutorial-for-ios-with-quick-nimble#toc-anchor-010">Behavior-Driven Testing Tutorial for iOS with Quick &amp; Nimble</a><br><a target="_blank" rel="noopener" href="https://blog.pragmatists.com/test-doubles-fakes-mocks-and-stubs-1a7491dfa3da">Test Doubles — Fakes, Mocks and Stubs.</a><br><a target="_blank" rel="noopener" href="https://www.mokacoding.com/blog/waituntil-vs-toeventually/">Nimble: when to use waitUntil or toEventually</a><br><a target="_blank" rel="noopener" href="http://rx-marin.com/post/rxblocking-part2/">Testing with RxBlocking, part 2</a><br><a target="_blank" rel="noopener" href="https://www.raywenderlich.com/7408-testing-your-rxswift-code#toc-anchor-005">Testing Your RxSwift Code</a></p>
+
+            
+            <div class="post-nav">
+                <hr>
+                
+                    <div class="post-nav-item">上一篇:<a href="/2020/07/07/tdd-part-three/" rel="prev"
+                        title="A song of TDD and BUG - 副歌">A song of TDD and BUG - 副歌
+                      </a></div>
+                
+                
+                    <div class="post-nav-item">下一篇:<a href="/2020/07/05/arts-04/" rel="next"
+                        title="ARTS 打卡 04">ARTS 打卡 04</a></div>
+                
+            </div>
+            
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/profile.jpg?v=brand-restored" height="300" width="300" alt="作者头像" loading="lazy"></img>
+                    <p>Penstein</p>
+                    <span>Simple(r) Always Wins.</span>
+                    <dl>
+                        
+                            
+                                <dd><a href="https://github.com/almost-khan" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">20 <p>文章</p></a></li>
+                    <li><a href="/categories">6 <p>分类</p></a></li>
+                    <li><a href="/tags">9 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#FBI-Warning"><span class="toc-number">1.</span> <span class="toc-text">FBI Warning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E4%BB%A3%E7%A0%81%E9%9C%80%E8%A6%81%E5%86%99%E5%8D%95%E6%B5%8B"><span class="toc-number">2.</span> <span class="toc-text">什么代码需要写单测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%81%9A%E4%B8%80%E5%8F%AA%E5%90%88%E6%A0%BC%E7%9A%84%E5%8D%95%E6%B5%8B"><span class="toc-number">3.</span> <span class="toc-text">如何做一只合格的单测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E6%B5%8B%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">4.</span> <span class="toc-text">单测的命名规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Given%EF%BC%8CWhen%EF%BC%8CThen"><span class="toc-number">5.</span> <span class="toc-text">Given，When，Then</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gearing-Up"><span class="toc-number">6.</span> <span class="toc-text">Gearing Up</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%BC%80%E5%A7%8B"><span class="toc-number">7.</span> <span class="toc-text">真正的开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E8%AF%86-Quick-Nimble"><span class="toc-number">8.</span> <span class="toc-text">初识 Quick &amp; Nimble</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%9A%E5%8D%95%E6%B5%8B%E6%B0%B8%E8%BF%9C%E6%BB%B4%E7%A5%9E"><span class="toc-number">9.</span> <span class="toc-text">做单测永远滴神</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E8%83%BD%E4%BD%BF%E8%80%85%E6%8A%BD%E8%B1%A1%E5%B1%82"><span class="toc-number">9.1.</span> <span class="toc-text">光能使者抽象层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%95%E8%90%BD%E5%A4%A9%E4%BD%BF-Mock"><span class="toc-number">9.2.</span> <span class="toc-text">堕落天使 Mock</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Networking-%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8D%95%E6%B5%8B"><span class="toc-number">10.</span> <span class="toc-text">Networking 代码的单测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="toc-number">11.</span> <span class="toc-text">异步测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Happy-Path-vs-Unhappy-Path"><span class="toc-number">12.</span> <span class="toc-text">Happy Path vs. Unhappy Path</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rx%EF%BC%8C%E4%BD%A0%E4%B8%AA%E7%A3%A8%E4%BA%BA%E7%9A%84%E5%B0%8F%E5%A6%96%E7%B2%BE"><span class="toc-number">13.</span> <span class="toc-text">Rx，你个磨人的小妖精</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RxTest"><span class="toc-number">13.1.</span> <span class="toc-text">RxTest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RxBlocking"><span class="toc-number">13.2.</span> <span class="toc-text">RxBlocking</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%81%9A%E9%80%89%E6%8B%A9"><span class="toc-number">13.3.</span> <span class="toc-text">如何做选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">14.</span> <span class="toc-text">结语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="toc-number">15.</span> <span class="toc-text">相关链接</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2026
+        <span class="gradient-text">
+            Penstein
+        </span>.
+        Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.4" target="_blank" rel="noopener">v1.4.9.4</a></small>
+        
+        
+    </p>
+</footer>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script defer src="/js/plugin.js"></script>
+<script defer src="/js/search.js"></script>
+<script defer src="/js/obsidian.js"></script>
+
+
+
+
+
+</body>
+</html>

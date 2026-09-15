@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://almostkhan.me/sitemap.xml
+Sitemap: https://almostkhan.me/baidusitemap.xml
