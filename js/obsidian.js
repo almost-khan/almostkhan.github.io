@@ -1,3 +1,7 @@
+// Keep the reading experience independent of optional third-party widgets.
+function initialMathJax() {}
+function reprocessMathJax() {}
+function initialTyped() {}
 /**
  * Hexo-obsidian-theme
  * @author Guo Xiang - @TriDiamond
@@ -72,17 +76,13 @@ function utiliseBgColor() {
  * Building the caption html in an article
  */
 function buildImgCaption() {
-  var images = $('.content').find('img');
-  var usedCaption = [];
-
-  images.each(function () {
-    var caption = $(this).attr('alt');
-    if (caption !== '' && usedCaption.indexOf(caption) < 0) {
-      $('.content')
-        .find("[alt='" + caption + "']")
-        .parent()
-        .append('<p class="image-caption">"' + caption + '"</p>');
-      usedCaption.push(caption);
+  $('.content img').each(function () {
+    const image = $(this);
+    const caption = image.attr('alt');
+    image.attr({loading: 'lazy', decoding: 'async'});
+    if (caption && !image.data('captioned')) {
+      $('<p>').addClass('image-caption').text(caption).insertAfter(image);
+      image.data('captioned', true);
     }
   });
 }
@@ -339,152 +339,7 @@ var Obsidian = {
     utiliseBgColor('article');
     Obsidian.initialShare();
   },
-  setCodeRowWithLang: function () {
-    // Get the programming type of the current code block
-    var code = $('code');
-    if (code && code.length) {
-      code.each(function () {
-        var item = $(this),
-          lang = '';
-        if (item[0].className.indexOf(' ') > -1) {
-          lang = item[0].className.split(' ')[0];
-        } else {
-          lang = item[0].className;
-        }
-        var langMap = {
-          html: 'HTML',
-          xml: 'XML',
-          svg: 'SVG',
-          mathml: 'MathML',
-          css: 'CSS',
-          clike: 'C-like',
-          js: 'JavaScript',
-          abap: 'ABAP',
-          apacheconf: 'Apache Configuration',
-          apl: 'APL',
-          arff: 'ARFF',
-          asciidoc: 'AsciiDoc',
-          adoc: 'AsciiDoc',
-          asm6502: '6502 Assembly',
-          aspnet: 'ASP.NET (C#)',
-          autohotkey: 'AutoHotkey',
-          autoit: 'AutoIt',
-          shell: 'BASH',
-          bash: 'BASH',
-          basic: 'BASIC',
-          csharp: 'C#',
-          dotnet: 'C#',
-          cpp: 'C++',
-          cil: 'CIL',
-          csp: 'Content-Security-Policy',
-          'css-extras': 'CSS Extras',
-          django: 'Django/Jinja2',
-          jinja2: 'Django/Jinja2',
-          dockerfile: 'Docker',
-          erb: 'ERB',
-          fsharp: 'F#',
-          gcode: 'G-code',
-          gedcom: 'GEDCOM',
-          glsl: 'GLSL',
-          gml: 'GameMaker Language',
-          gamemakerlanguage: 'GameMaker Language',
-          graphql: 'GraphQL',
-          hcl: 'HCL',
-          http: 'HTTP',
-          hpkp: 'HTTP Public-Key-Pins',
-          hsts: 'HTTP Strict-Transport-Security',
-          ichigojam: 'IchigoJam',
-          inform7: 'Inform 7',
-          javastacktrace: 'Java stack trace',
-          json: 'JSON',
-          jsonp: 'JSONP',
-          latex: 'LaTeX',
-          emacs: 'Lisp',
-          elisp: 'Lisp',
-          'emacs-lisp': 'Lisp',
-          lolcode: 'LOLCODE',
-          'markup-templating': 'Markup templating',
-          matlab: 'MATLAB',
-          mel: 'MEL',
-          n1ql: 'N1QL',
-          n4js: 'N4JS',
-          n4jsd: 'N4JS',
-          'nand2tetris-hdl': 'Nand To Tetris HDL',
-          nasm: 'NASM',
-          nginx: 'nginx',
-          nsis: 'NSIS',
-          objectivec: 'Objective-C',
-          ocaml: 'OCaml',
-          opencl: 'OpenCL',
-          parigp: 'PARI/GP',
-          objectpascal: 'Object Pascal',
-          php: 'PHP',
-          'php-extras': 'PHP Extras',
-          plsql: 'PL/SQL',
-          powershell: 'PowerShell',
-          properties: '.properties',
-          protobuf: 'Protocol Buffers',
-          q: 'Q (kdb+ database)',
-          jsx: 'React JSX',
-          tsx: 'React TSX',
-          renpy: "Ren'py",
-          rest: 'reST (reStructuredText)',
-          sas: 'SAS',
-          sass: 'SASS (Sass)',
-          scss: 'SASS (Scss)',
-          sql: 'SQL',
-          soy: 'Soy (Closure Template)',
-          tap: 'TAP',
-          toml: 'TOML',
-          tt2: 'Template Toolkit 2',
-          ts: 'TypeScript',
-          vbnet: 'VB.Net',
-          vhdl: 'VHDL',
-          vim: 'vim',
-          'visual-basic': 'Visual Basic',
-          vb: 'Visual Basic',
-          wasm: 'WebAssembly',
-          wiki: 'Wiki markup',
-          xeoracube: 'XeoraCube',
-          xojo: 'Xojo (REALbasic)',
-          xquery: 'XQuery',
-          yaml: 'YAML',
-        };
-
-        var displayLangText = '';
-        if (lang in langMap) displayLangText = langMap[lang];
-        else displayLangText = lang;
-        if (item.find('.language-mark').length <= 0 && displayLangText) {
-          // reset code block styles
-          item.css('background', 'transparent');
-          item.css('padding', 0);
-
-          var $code = item.text();
-
-          item.empty();
-
-          var myCodeMirror = CodeMirror(this, {
-            value: $code,
-            mode: Obsidian.getCodeMirrorMode(lang),
-            lineNumbers: !item.is('.inline'),
-            readOnly: true,
-            lineWrapping: true,
-            theme: 'dracula',
-          });
-
-          item
-            .find('.CodeMirror')
-            .prepend(
-              '<span class="language-mark" ref=' +
-                lang +
-                '> <b class="iconfont icon-code" style="line-height: 0.7rem"></b> ' +
-                displayLangText +
-                '</span>'
-            );
-        }
-      });
-    }
-  },
+  setCodeRowWithLang: function () {},
   tocSpy: function (offset) {
     var tocContainer = $('#toc');
     var toc = tocContainer,
@@ -527,7 +382,7 @@ var Obsidian = {
       wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
     };
 
-    socialShare('.share-component-cc', $config);
+    if (typeof socialShare === 'function') socialShare('.share-component-cc', $config);
   },
   v: function (t, e) {
     if (t)
@@ -889,7 +744,7 @@ $(function () {
       getSearchFile();
       this.onclick = null;
     };
-    inputArea.onkeydown = function () {
+    inputArea.onkeydown = function (event) {
       if (event.keyCode == 13) return false;
     };
   }
@@ -1029,6 +884,8 @@ $(function () {
     }
   });
   $('body').on('click', function (e) {
+    // Real navigation keeps page metadata, history and failure recovery consistent.
+    if ($(e.target).closest('a.posttitle, a.pviewa, a.more, #home-icon').length) return;
     var tag = $(e.target).attr('class') || '',
       rel = $(e.target).attr('rel') || '',
       set,
@@ -1060,6 +917,7 @@ $(function () {
       case tag.indexOf('switchmenu') != -1:
         window.scrollTo(0, 0);
         $('html, body').toggleClass('mu');
+        $('.switchmenu').attr('aria-expanded', $('body').hasClass('mu') ? 'true' : 'false');
         var switchMenu = $('.switchmenu');
         if (switchMenu.hasClass('icon-menu')) {
           switchMenu.removeClass('icon-menu').addClass('icon-cross');
@@ -1200,7 +1058,7 @@ $(function () {
       // photoswipe
       case tag.indexOf('pimg') != -1:
         var pswpElement = $('.pswp').get(0);
-        if (pswpElement) {
+        if (pswpElement && typeof PhotoSwipe !== 'undefined') {
           var items = [];
           var index = 0;
           var imgs = [];

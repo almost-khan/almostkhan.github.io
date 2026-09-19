@@ -1,82 +1,51 @@
 
 <!DOCTYPE html>
-<html lang="zh-CN" class="loading">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CreateML - 开启革命的星星之火 - AlmostKhan</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="CyberHex, iOS, Swift, Development,"> 
-    <meta name="description" content="Simple(r) Always Wins.,本文主要是苹果线上活动 - 基于 CreateML 的物体识别的观后感和一点想法。
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CreateML - 开启革命的星星之火 - AlmostKhan</title>
+  <meta name="description" content="本文主要是苹果线上活动 - 基于 CreateML 的物体识别的观后感和一点想法。
 
 
-背景Core ML 在 2017 年的横空出世开启了苹果机器学习的元年。但苹果貌似并没有准备在这条路上停下脚步,"> 
-    <meta name="author" content="Penstein"> 
-    <link rel="alternative" href="atom.xml" title="AlmostKhan" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
-    
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+背景Core ML 在 2017 年的横空出世开启了苹果机器学习的元年。但苹果貌似并没有准备在这条路上停下脚步，隔了仅仅一年，苹果就推出了 Create ML，之后苹果还在不断地给 Core ML 和 Create ML 添加...">
+  <meta name="author" content="Penstein">
+  <link rel="canonical" href="https://almostkhan.me/2020/11/24/create-ml-introduction/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CreateML - 开启革命的星星之火">
+  <meta property="og:description" content="本文主要是苹果线上活动 - 基于 CreateML 的物体识别的观后感和一点想法。
 
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 
-    
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
-
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
-
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
-
-    
+背景Core ML 在 2017 年的横空出世开启了苹果机器学习的元年。但苹果貌似并没有准备在这条路上停下脚步，隔了仅仅一年，苹果就推出了 Create ML，之后苹果还在不断地给 Core ML 和 Create ML 添加...">
+  <meta property="og:url" content="https://almostkhan.me/2020/11/24/create-ml-introduction/">
+  <meta property="og:site_name" content="AlmostKhan">
+  <meta property="og:image" content="https://almostkhan.me/img/welcome-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta property="article:published_time" content="2020-11-24T12:56:24.000Z">
+  <meta property="article:modified_time" content="2020-11-24T12:56:24.000Z">
+  
+  <link rel="alternate" href="/atom.xml" title="AlmostKhan" type="application/atom+xml">
+  <link rel="icon" href="/img/favicon.png?v=brand-restored">
+  
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 <link rel="stylesheet" href="/css/obsidian.css">
+<link rel="stylesheet" href="/css/site.css">
 
-    
-<link rel="stylesheet" href="/css/ball-atom.min.css">
-
-    
-    
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-
-    
-    <script>var musiclist = ""</script>
-    
-<script src="/js/loadaplayer.js"></script>
-
-    <!-- 引用依赖 -->
-    
-<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
-
-    
-<script src="/aplayer/dist/APlayer.min.js"></script>
-<script src="/js/Meting.min.js"></script>
-
-    
 <meta name="generator" content="Hexo 5.4.2"></head>
 
 
-<body class="loading">
-    <div class="loader">
-        <div class="la-ball-atom la-2x">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+<body>
     <span id="config-title" style="display:none">AlmostKhan</span>
     <div id="loader"></div>
+    <noscript><nav aria-label="站点导航"><a href="/">首页</a> · <a href="/archives/">归档</a> · <a href="/tags/">标签</a> · <a href="/about/">关于</a></nav></noscript>
     <div id="single">
     <div class="scrollbar gradient-bg-rev"></div>
 <div id="top" style="display: block;">
     <div class="bar" style="width: 0;"></div>
     <div class="navigation animated fadeIn fast delay-1s">
-        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://almostkhan.me">
-        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <a href="/" aria-label="返回首页"><img id="home-icon" class="icon-home" src="/img/favicon.png?v=brand-restored" alt="" data-url="https://almostkhan.me"></a>
         <h3 class="subtitle">CreateML - 开启革命的星星之火</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
@@ -84,9 +53,6 @@
             <!--        </div>-->
             <div>
                 <div class="share">
-                    
-                        <a href="javascript:;" class="iconfont icon-share1"></a>
-                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
                     
                 </div>
             </div>
@@ -100,7 +66,7 @@
         <div class="article-cover animated fadeIn" style="
             animation-delay: 600ms;
             animation-duration: 1.2s;
-            background-image: 
+            background-image:
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
                 url('/img/cover.png') ">
         </div>
@@ -112,8 +78,8 @@
                 
                 十一月 24, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2020/11/24/create-ml-introduction/" title="CreateML - 开启革命的星星之火" class="">CreateML - 开启革命的星星之火</a>
-            </h3>
+            <h1 class="post-title animated fadeInDown"><a href="/2020/11/24/create-ml-introduction/" title="CreateML - 开启革命的星星之火" class="">CreateML - 开启革命的星星之火</a>
+            </h1>
             
             <p class="post-count animated fadeInDown">
                 
@@ -125,15 +91,10 @@
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    6 mins.
+                    6 分钟
                 </span>
                 
                 
-                
-                <span id="busuanzi_container_page_pv">
-                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
-                    <span id="busuanzi_value_page_pv">0</span>
-                </span>
                 
             </p>
             
@@ -179,49 +140,37 @@
 <h3 id="仍然不够成熟"><a href="#仍然不够成熟" class="headerlink" title="仍然不够成熟"></a>仍然不够成熟</h3><p>和隔壁使用 Python 生态的机器学习圈相比，苹果和 Swift 仍然有挺长的路要走。虽然 Create ML 包含了 Image，Video，Motion，Sound，Text 和 Table 的类别，但是其中暂时也是只有一些特定的 Template 可以使用，还是略显单薄。</p>
 <h3 id="无法在云端训练"><a href="#无法在云端训练" class="headerlink" title="无法在云端训练"></a>无法在云端训练</h3><p>虽然在 Mac 上就能进行 Training 听起来非常美好，但是缺乏在云端训练的功能还是一个比较值得注意的问题。如果想让更多的用户转移到 Create ML 这个平台势必要考虑这个问题。但如果 Create ML 的定位就是轻量级别的 Training 的话，这可能也算不上一个问题。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>从苹果这些年的一系列动作可以看出他们对于机器学习的生态有很大的野望，和谷歌等大公司的明争暗斗也让人看得眼花缭乱。谷歌也在积极推进 Swift for TensorFlow，从侧面也能看出谷歌对他这个对手的尊重。在我们凡人围观这场”神仙打架”的过程中也能看出来 Create ML 的出现更像一场即将或正在发生的革命 - 曾经机器学习的大部分资源都掌握在少数”AI精英”的手中，Create ML 的出现有助于打破现有的 “机器学习垄断”，让更多的开发者能有一个像样的交通工具加入这个赛道，虽然比不上别人的兰博基尼，但是也算有了代步的工具。随着更多人的加入，全民机器学习的时代可能会比我们想象的更早到来，到时候作为非机器学习的开发者也将有机会把自己的想法转化成真正的产品，AI 相关的应用将犹如雨后春笋般的出现。</p>
-<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p>感谢公司的这次机会以及苹果员工精彩的演讲和耐心的咨询。最后打个广告：落叶的一生就是为了归根吗？曾经的我也相信宿命论 - 程序员就是要 996 的，疫情是要被裁员的，出游是要自掏腰包的，五一是只有三天假的 … 仿佛死神与巴格达商人在萨拉马的相会，一切都是那么无力。直到我加入了猿辅导，我的世界观崩塌了：原来程序员也不一定非要 996，疫情期间会有更多的项目和机会，出游是公司掏钱，五一有九天假！从来没见过如此”不讲武德”的公司，说好的武林要以和为贵呢？你这样其他公司怎么活！那你还在等什么，加入我们，我的邮箱是 <a href="mailto:&#x67;&#111;&#117;&#112;&#121;&#x40;&#102;&#101;&#x6e;&#x62;&#x69;&#46;&#x63;&#x6f;&#109;">goupy@fenbi.com</a>，内推我是认真的，你值得拥有更好的。</p>
+<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p>感谢公司的这次机会以及苹果员工精彩的演讲和耐心的咨询。最后打个广告：落叶的一生就是为了归根吗？曾经的我也相信宿命论 - 程序员就是要 996 的，疫情是要被裁员的，出游是要自掏腰包的，五一是只有三天假的 … 仿佛死神与巴格达商人在萨拉马的相会，一切都是那么无力。直到我加入了猿辅导，我的世界观崩塌了：原来程序员也不一定非要 996，疫情期间会有更多的项目和机会，出游是公司掏钱，五一有九天假！从来没见过如此”不讲武德”的公司，说好的武林要以和为贵呢？你这样其他公司怎么活！那你还在等什么，加入我们，我的邮箱是 <a href="mailto:&#x67;&#x6f;&#117;&#112;&#121;&#x40;&#102;&#101;&#x6e;&#x62;&#x69;&#46;&#99;&#111;&#x6d;">goupy@fenbi.com</a>，内推我是认真的，你值得拥有更好的。</p>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p><a target="_blank" rel="noopener" href="https://www.notion.so/Create-ML-84d28aa842064be7b74eb3bde136bd93">笔记 - 基于 Create ML 的物体识别</a><br><a target="_blank" rel="noopener" href="https://machinethink.net/blog/new-in-apple-machine-learning-2020/">Apple machine learning in 2020: What’s new?</a><br><a target="_blank" rel="noopener" href="https://www.raywenderlich.com/5653/create-ml-tutorial-getting-started#toc-anchor-020">Create ML Tutorial: Getting Started</a><br><a target="_blank" rel="noopener" href="http://www.cocoachina.com/articles/26420">WWDC 2018：初探 Create ML</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/41979241">什么是迁移学习 (Transfer Learning)？这个领域历史发展前景如何？</a><br><a target="_blank" rel="noopener" href="https://www.netguru.com/codestories/createml-start-your-adventure-in-machine-learning-with-swift">CreateML: Start Your Adventure in Machine Learning with Swift</a><br><a target="_blank" rel="noopener" href="https://hongchaozhang.github.io/blog/2018/06/15/introducing-create-ml/">Introducing Create ML</a><br><a target="_blank" rel="noopener" href="https://heartbeat.fritz.ai/sound-classification-using-core-ml-3-and-create-ml-fc73ca20aff5">Sound Classification on iOS Using Core ML 3 and Create ML</a><br><a target="_blank" rel="noopener" href="https://www.computerworld.com/article/3293446/why-apple-s-create-ml-matters-to-your-enterprise.html">Why Apple’s Create ML matters to your enterprise</a></p>
 
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls"
-                data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
             
-            <ul id="audio-list" style="display:none">
+            <div class="post-nav">
+                <hr>
+                
+                    <div class="post-nav-item">上一篇:<a href="/2020/12/01/arts-09/" rel="prev"
+                        title="ARTS 打卡 09">ARTS 打卡 09
+                      </a></div>
                 
                 
-                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                    <div class="post-nav-item">下一篇:<a href="/2020/08/02/arts-08/" rel="next"
+                        title="ARTS 打卡 08">ARTS 打卡 08</a></div>
                 
-                    
-            </ul>
+            </div>
             
-                        
-            
-            
-    <div id='gitalk-container' class="comment link"
-        data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d=''
-        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
-    >留言</div>
-
-
             
             
         </div>
         <div class="sidebar">
             <div class="box animated fadeInRight">
                 <div class="subbox">
-                    <img src="/img/profile.jpg" height=300 width=300></img>
+                    <img src="/img/profile.jpg?v=brand-restored" height="300" width="300" alt="作者头像" loading="lazy"></img>
                     <p>Penstein</p>
                     <span>Simple(r) Always Wins.</span>
                     <dl>
                         
+                            
+                                <dd><a href="https://github.com/almost-khan" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
                             
                             
                             
@@ -257,14 +206,13 @@
         <span class="percentage animated fadeIn faster">0%</span>
         <span class="iconfont icon-top02 animated fadeIn faster"></span>
     </div>
-</body>
 <footer>
     <p class="copyright" id="copyright">
         &copy; 2026
         <span class="gradient-text">
             Penstein
         </span>.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme
         <span class="gradient-text">
             <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
@@ -275,194 +223,14 @@
     </p>
 </footer>
 
-<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script>
-  MathJax.Hub.Config({
-    "HTML-CSS": {
-      preferredFont: "TeX",
-      availableFonts: ["STIX", "TeX"],
-      linebreaks: {
-        automatic: true
-      },
-      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-      inlineMath: [
-        ["$", "$"],
-        ["\\(", "\\)"]
-      ],
-      processEscapes: true,
-      ignoreClass: "tex2jax_ignore|dno",
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      noUndefined: {
-        attributes: {
-          mathcolor: "red",
-          mathbackground: "#FFEEEE",
-          mathsize: "90%"
-        }
-      },
-      Macros: {
-        href: "{}"
-      }
-    },
-    messageStyle: "none"
-  });
-</script>
-<script>
-  function initialMathJax() {
-    MathJax.Hub.Queue(function () {
-      var all = MathJax.Hub.getAllJax(),
-        i;
-      // console.log(all);
-      for (i = 0; i < all.length; i += 1) {
-        console.log(all[i].SourceElement().parentNode)
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-  }
-
-  function reprocessMathJax() {
-    if (typeof MathJax !== 'undefined') {
-      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-    }
-  }
-</script>
-
-
- 
-<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
- 
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-  
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/obsidian.js"></script>
-<script src="/js/jquery.truncate.js"></script>
-<script src="/js/search.js"></script>
- 
-<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
- 
-<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
- 
-<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
-
-
-<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
- 
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
-   
-<script src="/js/busuanzi.min.js"></script>
-
-<script>
-  $(document).ready(function () {
-    if ($('span[id^="busuanzi_"]').length) {
-      initialBusuanzi();
-    }
-  });
-</script>
- 
-<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
-<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
-
-
-<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
-<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-
-<script>
-  function initialTyped() {
-    var typedTextEl = $('.typed-text');
-    if (typedTextEl && typedTextEl.length > 0) {
-      var typed = new Typed('.typed-text', {
-        strings: ['Simple(r) Always Wins.', 'Simple(r) Always Wins.'],
-        typeSpeed: 90,
-        loop: true,
-        loopCount: Infinity,
-        backSpeed: 20,
-      });
-    }
-  }
-
-  if ($('.article-header') && $('.article-header').length) {
-    $(document).ready(function () {
-      initialTyped();
-    });
-  }
-</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script defer src="/js/plugin.js"></script>
+<script defer src="/js/search.js"></script>
+<script defer src="/js/obsidian.js"></script>
 
 
 
 
-<!-- 引用依赖 -->
-<script>document.write(aplayerconf)</script>
 
-
-
-
+</body>
 </html>

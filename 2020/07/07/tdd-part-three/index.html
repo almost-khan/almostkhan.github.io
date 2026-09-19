@@ -1,82 +1,51 @@
 
 <!DOCTYPE html>
-<html lang="zh-CN" class="loading">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>A song of TDD and BUG - 副歌 - AlmostKhan</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="CyberHex, iOS, Swift, Development,"> 
-    <meta name="description" content="Simple(r) Always Wins.,TDD 与 BUG 的爱恨情仇（卷三），本系列链表头部请戳 A song of TDD and BUG - 前奏曲
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A song of TDD and BUG - 副歌 - AlmostKhan</title>
+  <meta name="description" content="TDD 与 BUG 的爱恨情仇（卷三），本系列链表头部请戳 A song of TDD and BUG - 前奏曲
 
 
-副歌不副，FTDD 不 F可能你在想，不是 A song of TDD and,"> 
-    <meta name="author" content="Penstein"> 
-    <link rel="alternative" href="atom.xml" title="AlmostKhan" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
-    
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+副歌不副，FTDD 不 F可能你在想，不是 A song of TDD and BUG 吗？怎么都到了副歌部分了，还没怎么说 TDD。这个可能就要怪我们民国的大师们把 Chorus 翻译成副歌了...">
+  <meta name="author" content="Penstein">
+  <link rel="canonical" href="https://almostkhan.me/2020/07/07/tdd-part-three/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A song of TDD and BUG - 副歌">
+  <meta property="og:description" content="TDD 与 BUG 的爱恨情仇（卷三），本系列链表头部请戳 A song of TDD and BUG - 前奏曲
 
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 
-    
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
-
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
-
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
-
-    
+副歌不副，FTDD 不 F可能你在想，不是 A song of TDD and BUG 吗？怎么都到了副歌部分了，还没怎么说 TDD。这个可能就要怪我们民国的大师们把 Chorus 翻译成副歌了...">
+  <meta property="og:url" content="https://almostkhan.me/2020/07/07/tdd-part-three/">
+  <meta property="og:site_name" content="AlmostKhan">
+  <meta property="og:image" content="https://almostkhan.me/img/welcome-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta property="article:published_time" content="2020-07-06T16:37:20.000Z">
+  <meta property="article:modified_time" content="2020-07-06T16:37:20.000Z">
+  
+  <link rel="alternate" href="/atom.xml" title="AlmostKhan" type="application/atom+xml">
+  <link rel="icon" href="/img/favicon.png?v=brand-restored">
+  
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 <link rel="stylesheet" href="/css/obsidian.css">
+<link rel="stylesheet" href="/css/site.css">
 
-    
-<link rel="stylesheet" href="/css/ball-atom.min.css">
-
-    
-    
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-
-    
-    <script>var musiclist = ""</script>
-    
-<script src="/js/loadaplayer.js"></script>
-
-    <!-- 引用依赖 -->
-    
-<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
-
-    
-<script src="/aplayer/dist/APlayer.min.js"></script>
-<script src="/js/Meting.min.js"></script>
-
-    
 <meta name="generator" content="Hexo 5.4.2"></head>
 
 
-<body class="loading">
-    <div class="loader">
-        <div class="la-ball-atom la-2x">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+<body>
     <span id="config-title" style="display:none">AlmostKhan</span>
     <div id="loader"></div>
+    <noscript><nav aria-label="站点导航"><a href="/">首页</a> · <a href="/archives/">归档</a> · <a href="/tags/">标签</a> · <a href="/about/">关于</a></nav></noscript>
     <div id="single">
     <div class="scrollbar gradient-bg-rev"></div>
 <div id="top" style="display: block;">
     <div class="bar" style="width: 0;"></div>
     <div class="navigation animated fadeIn fast delay-1s">
-        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://almostkhan.me">
-        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <a href="/" aria-label="返回首页"><img id="home-icon" class="icon-home" src="/img/favicon.png?v=brand-restored" alt="" data-url="https://almostkhan.me"></a>
         <h3 class="subtitle">A song of TDD and BUG - 副歌</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
@@ -84,9 +53,6 @@
             <!--        </div>-->
             <div>
                 <div class="share">
-                    
-                        <a href="javascript:;" class="iconfont icon-share1"></a>
-                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
                     
                 </div>
             </div>
@@ -100,7 +66,7 @@
         <div class="article-cover animated fadeIn" style="
             animation-delay: 600ms;
             animation-duration: 1.2s;
-            background-image: 
+            background-image:
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
                 url('/img/cover.png') ">
         </div>
@@ -112,28 +78,23 @@
                 
                 七月 07, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2020/07/07/tdd-part-three/" title="A song of TDD and BUG - 副歌" class="">A song of TDD and BUG - 副歌</a>
-            </h3>
+            <h1 class="post-title animated fadeInDown"><a href="/2020/07/07/tdd-part-three/" title="A song of TDD and BUG - 副歌" class="">A song of TDD and BUG - 副歌</a>
+            </h1>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    7.6k
+                    7.7k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    7 mins.
+                    7 分钟
                 </span>
                 
                 
-                
-                <span id="busuanzi_container_page_pv">
-                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
-                    <span id="busuanzi_value_page_pv">0</span>
-                </span>
                 
             </p>
             
@@ -191,14 +152,14 @@
 <p>我们在写单测的时候会主动地去移除外部依赖以保证单元测试的单元性，但是外部环境（数据库，文件系统，向其他应用发起网络请求）也是软件系统中非常重要的一部分，所以我们需要编写一些测试可以覆盖到这些依赖。</p>
 <p>接下来我们就说一下集成测试：在编写集成测试的时候我们应该尽可能的在本地运行外部依赖。拿 Rainstorm 来举例，如果要做集成测试，我们就需要在本地起一个服务器来充当 DarkSky API 的角色，然后对整个流程进行测试。</p>
 <h2 id="测试金字塔"><a href="#测试金字塔" class="headerlink" title="测试金字塔"></a>测试金字塔</h2><p>从上边我们知道了测试是分层级的，对于他们之间的关系有一个很好的比喻-测试金字塔。你可能会想，为啥是金字塔，不是长城，不是空中花园？这是因为理想情况下，越低层级的测试的占有率应该越高。如下图（这张图是从网上扒的，就大概表达一下意思，并不是说我们一定要按照图里的测试层级去设计自己的测试）：</p>
-<p><img src="https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png" alt="Testing Pyramid"></p>
+<p><img decoding="async" loading="lazy" src="https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png" alt="Testing Pyramid"></p>
 <p>从图中我们也可以看到他想表达的意思就是越高层级的测试效率会下降，成本会上升。</p>
 <p>以 Rainstorm 为例，我们可以参考的测试金字塔从低到高可以是：单元测试 -&gt; 集成测试 -&gt; UI 测试 -&gt; 人工测试。不过这个还是要看不同项目的不同需求。</p>
 <h3 id="Depth-Of-Test"><a href="#Depth-Of-Test" class="headerlink" title="Depth Of Test"></a>Depth Of Test</h3><p>这个概念是我在这篇博客 <a target="_blank" rel="noopener" href="http://fabiopereira.me/blog/2012/03/18/introducing-depth-of-test-dot/">Introducing Depth of Test (DOT)</a> 中看到的，文中借用了摄影中景深（Depth of Field）的概念，定义了 Depth Of Test（测试深度） 为在一次测试中所启动的最近软件原件（software component）到最远软件元件之间的距离。这个软件元件可以代表 Class 或 Function 甚至模块等等。</p>
 <p>下边我继续以 <a target="_blank" rel="noopener" href="https://github.com/quintessencegpy/Rainstorm">Rainstorm</a> 为例说明一下测试深度。在我们对 RootViewModel 做单测的时候，我们想测试是否能通过网络层代码拿到正确的数据，我们的测试时候软件元件的路径是这样的：从 MockLocationService 中拿到位置数据，传递给 MockNetworkService 然后得到输出。由此可见我们的测试深度是 2。现在假设我们用人工的方式来测试，App 的流程是：进入页面后 RootViewController 会初始化 RootViewModel，然后 RootViewModel 通过 LocationManager（底层是 CLLocation） 请求位置，收到位置后由 NetworkManager（底层是 URLSession）再向 DarkSky API 请求天气数据，得到天气数据后通过 RootViewModel 生成 DayViewModel，然后由 DayViewController 来展示天气数据（在得到天气数据之后的数据流动在计算测试深度的时候我们可以暂时忽略）。在上边这次测试中最近的软件元件是 RootViewController 而最远的软件元件是 URLSession，所以测试深度是 6。</p>
 <p>有了测试深度这个概念我们就可以发现，其实金字塔从底层到高层其实就是测试深度从浅到深的不同。这也解释了为什么金字塔层级越高的测试效率越低。</p>
 <h3 id="金字塔-VS-冰激凌"><a href="#金字塔-VS-冰激凌" class="headerlink" title="金字塔 VS. 冰激凌"></a>金字塔 VS. 冰激凌</h3><p>前边说了理想状态下的测试层级是金字塔形状的，但是有理想就有苟且，那金字塔的对立面就是另一种模式 - 冰激凌模式，下边两张图就是两种不同模式的对比。</p>
-<p>金字塔：<br><img src="https://miro.medium.com/max/1400/1*yBtEl6upLogDbvGG7nPRPw.jpeg" alt="Testing Pyramid"><br>冰淇淋：<br><img src="https://miro.medium.com/max/1400/1*I7izE-QRFNYl9nDxggbO8g.jpeg" alt="Ice cream cone anti-pattern"></p>
+<p>金字塔：<br><img decoding="async" loading="lazy" src="https://miro.medium.com/max/1400/1*yBtEl6upLogDbvGG7nPRPw.jpeg" alt="Testing Pyramid"><br>冰淇淋：<br><img decoding="async" loading="lazy" src="https://miro.medium.com/max/1400/1*I7izE-QRFNYl9nDxggbO8g.jpeg" alt="Ice cream cone anti-pattern"></p>
 <p>看冰激凌模式眼熟的在评论区刷波 1。</p>
 <p>冰激凌模式存在的问题就是平均测试深度过深，相应的测试效率和成本都会比金字塔模式表现得差。</p>
 <h3 id="测试下沉原则"><a href="#测试下沉原则" class="headerlink" title="测试下沉原则"></a>测试下沉原则</h3><blockquote>
@@ -210,46 +171,34 @@
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>相关链接：</p>
 <p><a target="_blank" rel="noopener" href="https://insights.thoughtworks.cn/practical-test-pyramid/">测试金字塔实战</a><br><a target="_blank" rel="noopener" href="https://martinfowler.com/bliki/TestPyramid.html">TestPyramid</a><br><a target="_blank" rel="noopener" href="https://www.thoughtworks.com/insights/blog/introducing-software-testing-cupcake-anti-pattern">Introducing the Software Testing Cupcake (Anti-Pattern)</a><br><a target="_blank" rel="noopener" href="https://jamescrisp.org/2011/05/30/automated-testing-and-the-test-pyramid/">Automated Testing and the Test Pyramid</a><br><a target="_blank" rel="noopener" href="http://fabiopereira.me/blog/2012/03/18/introducing-depth-of-test-dot/">Introducing Depth of Test (DOT)</a></p>
 
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls"
-                data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
             
-            <ul id="audio-list" style="display:none">
+            <div class="post-nav">
+                <hr>
+                
+                    <div class="post-nav-item">上一篇:<a href="/2020/07/07/tdd-part-four/" rel="prev"
+                        title="A song of TDD and BUG - 变奏曲">A song of TDD and BUG - 变奏曲
+                      </a></div>
                 
                 
-                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                    <div class="post-nav-item">下一篇:<a href="/2020/07/07/tdd-part-two/" rel="next"
+                        title="A song of TDD and BUG - 主歌">A song of TDD and BUG - 主歌</a></div>
                 
-                    
-            </ul>
+            </div>
             
-                        
-            
-            
-    <div id='gitalk-container' class="comment link"
-        data-ae='false'
-        data-ci=''
-        data-cs=''
-        data-r=''
-        data-o=''
-        data-a=''
-        data-d=''
-        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
-    >留言</div>
-
-
             
             
         </div>
         <div class="sidebar">
             <div class="box animated fadeInRight">
                 <div class="subbox">
-                    <img src="/img/profile.jpg" height=300 width=300></img>
+                    <img src="/img/profile.jpg?v=brand-restored" height="300" width="300" alt="作者头像" loading="lazy"></img>
                     <p>Penstein</p>
                     <span>Simple(r) Always Wins.</span>
                     <dl>
                         
+                            
+                                <dd><a href="https://github.com/almost-khan" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
                             
                             
                             
@@ -285,14 +234,13 @@
         <span class="percentage animated fadeIn faster">0%</span>
         <span class="iconfont icon-top02 animated fadeIn faster"></span>
     </div>
-</body>
 <footer>
     <p class="copyright" id="copyright">
         &copy; 2026
         <span class="gradient-text">
             Penstein
         </span>.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
         Theme
         <span class="gradient-text">
             <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
@@ -303,194 +251,14 @@
     </p>
 </footer>
 
-<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script>
-  MathJax.Hub.Config({
-    "HTML-CSS": {
-      preferredFont: "TeX",
-      availableFonts: ["STIX", "TeX"],
-      linebreaks: {
-        automatic: true
-      },
-      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-      inlineMath: [
-        ["$", "$"],
-        ["\\(", "\\)"]
-      ],
-      processEscapes: true,
-      ignoreClass: "tex2jax_ignore|dno",
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      noUndefined: {
-        attributes: {
-          mathcolor: "red",
-          mathbackground: "#FFEEEE",
-          mathsize: "90%"
-        }
-      },
-      Macros: {
-        href: "{}"
-      }
-    },
-    messageStyle: "none"
-  });
-</script>
-<script>
-  function initialMathJax() {
-    MathJax.Hub.Queue(function () {
-      var all = MathJax.Hub.getAllJax(),
-        i;
-      // console.log(all);
-      for (i = 0; i < all.length; i += 1) {
-        console.log(all[i].SourceElement().parentNode)
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-  }
-
-  function reprocessMathJax() {
-    if (typeof MathJax !== 'undefined') {
-      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-    }
-  }
-</script>
-
-
- 
-<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
- 
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-  
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/obsidian.js"></script>
-<script src="/js/jquery.truncate.js"></script>
-<script src="/js/search.js"></script>
- 
-<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
- 
-<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
- 
-<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
-
-
-<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
- 
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
-   
-<script src="/js/busuanzi.min.js"></script>
-
-<script>
-  $(document).ready(function () {
-    if ($('span[id^="busuanzi_"]').length) {
-      initialBusuanzi();
-    }
-  });
-</script>
- 
-<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
-<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
-
-
-<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
-<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-
-<script>
-  function initialTyped() {
-    var typedTextEl = $('.typed-text');
-    if (typedTextEl && typedTextEl.length > 0) {
-      var typed = new Typed('.typed-text', {
-        strings: ['Simple(r) Always Wins.', 'Simple(r) Always Wins.'],
-        typeSpeed: 90,
-        loop: true,
-        loopCount: Infinity,
-        backSpeed: 20,
-      });
-    }
-  }
-
-  if ($('.article-header') && $('.article-header').length) {
-    $(document).ready(function () {
-      initialTyped();
-    });
-  }
-</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script defer src="/js/plugin.js"></script>
+<script defer src="/js/search.js"></script>
+<script defer src="/js/obsidian.js"></script>
 
 
 
 
-<!-- 引用依赖 -->
-<script>document.write(aplayerconf)</script>
 
-
-
-
+</body>
 </html>
